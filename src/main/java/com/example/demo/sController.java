@@ -58,4 +58,10 @@ public class sController {
             iinterface.save(nov);
             return "nov";
     }
+     @PutMapping(path="/proemni{id}")
+    public String promeni(@PathVariable int id){
+      Student i = iinterface.findById(id);
+      i = iinterface.save(i);
+      return "Uspesno promenjen";
+    } 
 }
